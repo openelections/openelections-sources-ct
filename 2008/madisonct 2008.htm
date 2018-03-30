@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/clerk.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- InstanceBeginEditable name="doctitle" -->
+<title>Town of Madison, CT</title>
+<!-- InstanceEndEditable -->
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #36444f;
+	margin: 0;
+	padding: 0;
+	color: #000;
+	background-image: url();
+	background-color: #ffffff;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+	list-style-position: inside;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~ this container surrounds all other divs giving them their percentage-based width ~~ */
+.container {
+	width: 80%;
+	box-shadow: 10px 10px 5px #888888;
+	max-width: 1260px;/* a max-width may be desirable to keep this layout from getting too wide on a large monitor. This keeps line length more readable. IE6 does not respect this declaration. */
+	min-width: 780px;/* a min-width may be desirable to keep this layout from getting too narrow. This keeps line length more readable in the side columns. IE6 does not respect this declaration. */
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout. It is not needed if you set the .container's width to 100%. */
+}
+
+/* ~~ the header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo ~~ */
+.header {
+	srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 20%;
+	background: #EEF4EE;
+	padding-bottom: 10px;
+	 border-bottom-right-radius: 6px;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+.content {
+	padding: 20px 0;
+	width: 80%;
+	float: left;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The navigation list styles (can be removed if you choose to use a premade flyout menu like Spry) ~~ */
+ul.nav {
+	list-style: none; /* this removes the list marker */
+	border-top: 1px solid #666; /* this creates the top border for the links - all others are placed using a bottom border on the LI */
+	margin-bottom: 15px; /* this creates the space between the navigation on the content below */
+	background-color: #996;
+}
+ul.nav li {
+	border-bottom: 1px solid #666; /* this creates the button separation */
+}
+ul.nav a, ul.nav a:visited { /* grouping these selectors makes sure that your links retain their button look even after being visited */
+	padding: 5px 5px 5px 15px;
+	display: block; /* this gives the link block properties causing it to fill the whole LI containing it. This causes the entire area to react to a mouse click. */
+	text-decoration: none;
+	background: #BBD2BB;
+	color: #000;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { /* this changes the background and text color for both mouse and keyboard navigators */
+	background: #004080;
+	color: #FFF;
+}
+
+/* ~~ The footer ~~ */
+.footer {
+	padding: 10px 0;
+	background: #004080; box-shadow: 10px 10px 5px #888888; 
+	color: #ABD;
+	font-size:75%;
+
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 8px;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+}
+
+/* ~~ miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the #container) if the #footer is removed or taken out of the #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+#apDiv1 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+	box-shadow: 1px 1px 5px #888888;
+	left: 800;
+	top: 200;
+	visibility: visible;
+}
+#mainContent { 
+    margin: 0 0 0 250px; 
+    padding: 0 20px 20px 20px; 
+} 
+.header1 {	srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.header2 {	srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.header11 {srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.header3 {	srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.header111 {srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.header21 {srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.container .header .clerk .clerk div {
+	font-size: small;
+	background-color: #996;
+}
+.header4 {	srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.header5 {	srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.header41 {srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+.header6 {	srcbackground: #a49473;
+    background: #beac86;
+	box-shadow: 10px 10px 5px #888888;
+	 border-bottom-right-radius: 6px;
+}
+#apDiv2 {
+	position:absolute;
+	width:200px;
+	height:115px;
+	z-index:1;
+	left: 312px;
+	top: 225px;
+}
+#apDiv3 {
+	position:relative;
+	width:200px;
+	height:115px;
+	z-index:1;
+	left: auto;
+	top: 218px;
+}
+#apDiv4 {
+	position:absolute;
+	width:450px;
+	height:115px;
+	z-index:1;
+	left: 300px;
+	top: 226px;
+	visibility: visible;
+}
+-->
+</style><!--[if lte IE 7]>
+<style>
+.content { margin-right: -1px; } /* this 1px negative margin can be placed on any of the columns in this layout with the same corrective effect. */
+ul.nav a { zoom: 1; }  /* the zoom property gives IE the hasLayout trigger it needs to correct extra whiltespace between the links */
+</style>
+<![endif]-->
+<!-- InstanceBeginEditable name="head" -->
+<!-- InstanceEndEditable -->
+</head>
+
+<body>
+
+<div class="container">
+  <div class="header"><!-- end .header --><a href="../../../index.htm"><span class="header6"><img src="../../../banners/madison/banner/2.jpg" alt="Town Clerk" width="175" height="131" align="right" /></span><img src="../../../banners/madison_beige.jpg" alt="Madison, Connecticut" width="620" height="131" border="0" /></a>
+    <div class="clerk">
+      <div class="clerk">
+        <div align="center"><strong>Office of the Town Clerk &#8226; 8 Campus Drive Madison, CT 06443</strong><br />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sidebar1">
+    <ul class="nav">
+      <li><strong><a href="../../index.html">Town Clerk</a></strong></li>
+      <li><a href="../../general.html">General Information</a></li>
+      <li><a href="../../town.html">Town Information</a></li>
+      <li><a href="../../forms/index.html">Forms &amp; Records</a></li>
+
+    <li><a href="../../voting.html">Voting &amp; Elections</a></li>
+        <li><a href="../../../index.htm">Town of Madison</a></li>
+        <li></ul>
+  <!-- end .sidebar1 --></div>
+<p>&nbsp;</p>
+  <!-- InstanceBeginEditable name="EditRegion1" -->
+<center><table width="800" border="1" cellpadding="20" cellspacing="0" bordercolor="#ACC8E3">
+    <tr>
+      <td width="30%">
+          <h3 align="center">November 4, 2008 Election Results</h3>
+          <ul>
+            <table width="780" cellspacing="0" cellpadding="5">
+             <tr valign="middle" class="subHeader" height="25">
+                <td height="25">&nbsp;</td>
+                <td >DISTRICT I</td>
+                <td >DISTRICT II</td>
+                <td >ABSENTEE</td>
+                <td >MACHINE</td>
+                <td >GRAND TOTAL</td>
+              </tr>
+              <tr bgcolor="#333399" class="style6" height="25">
+                <td height="25" colspan="6" bgcolor="#FFFFCC">Presidential    Electors</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>McCain &amp;    Palin (Republican)</strong></td>
+                <td>2020</td>
+                <td>2066</td>
+                <td>641</td>
+                <td>4086</td>
+                <td>4727</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Obama &amp;    Biden (Democratic)</strong></td>
+                <td>2600</td>
+                <td>2563</td>
+                <td>934</td>
+                <td>5163</td>
+                <td>6097</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Nader &amp;    Gonzalez (Independent)</strong></td>
+                <td>46</td>
+                <td>43</td>
+                <td>17</td>
+                <td>89</td>
+                <td>106</td>
+              </tr>
+              <tr bgcolor="#333399" class="style6" height="25">
+                <td height="25" colspan="6" bgcolor="#FFFFCC"><strong>Rep in    Congress</strong></td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Sean Sullivan    (Republican)</strong></td>
+                <td>1956</td>
+                <td>1987</td>
+                <td>598</td>
+                <td>3943</td>
+                <td>4541</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Joe Courtney    (Democratic)</strong></td>
+                <td>2378</td>
+                <td>2345</td>
+                <td>785</td>
+                <td>4723</td>
+                <td>5508</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>G. Scott    Deshefy (Green)</strong></td>
+                <td>52</td>
+                <td>45</td>
+                <td>24</td>
+                <td>97</td>
+                <td>121</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Joe Courtney    (Working Families)</strong></td>
+                <td>75</td>
+                <td>65</td>
+                <td>14</td>
+                <td>140</td>
+                <td>154</td>
+              </tr>
+              <tr bgcolor="#333399" class="style6" height="25">
+                <td height="25" colspan="6" bgcolor="#FFFFCC">State Senator</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Ryan Suerth    (Republican)</strong></td>
+                <td>2114</td>
+                <td>2264</td>
+                <td>618</td>
+                <td>4378</td>
+                <td>4996</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Edward Meyer    (Democratic)</strong></td>
+                <td>2349</td>
+                <td>2204</td>
+                <td>746</td>
+                <td>4553</td>
+                <td>5299</td>
+              </tr>
+              <tr bgcolor="#333399" class="style6" height="25">
+                <td height="25" colspan="6" bgcolor="#FFFFCC">State    Representative</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Jeanne    Stevens (Republican)</strong></td>
+                <td>1728</td>
+                <td>1781</td>
+                <td>542</td>
+                <td>3509</td>
+                <td>4051</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Deborah    Heinrich (Democratic)</strong></td>
+                <td>2775</td>
+                <td>2713</td>
+                <td>828</td>
+                <td>5488</td>
+                <td>6316</td>
+              </tr>
+              <tr bgcolor="#333399" class="style6" height="25">
+                <td height="25" colspan="6" bgcolor="#FFFFCC">Registrar of    Voters</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Peter Metz    (Republican)</strong></td>
+                <td>2440</td>
+                <td>2441</td>
+                <td>717</td>
+                <td>4881</td>
+                <td>5598</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>William B.    Gowanlock (Democratic)</strong></td>
+                <td>1918</td>
+                <td>1864</td>
+                <td>600</td>
+                <td>3782</td>
+                <td>4382</td>
+              </tr>
+              <tr bgcolor="#333399" class="style6" height="25">
+                <td height="25" colspan="6" bgcolor="#FFFFCC">State    Question #1</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Yes</strong></td>
+                <td>1467</td>
+                <td>1611</td>
+                <td>646</td>
+                <td>3078</td>
+                <td>3724</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>No</strong></td>
+                <td>2925</td>
+                <td>2817</td>
+                <td>702</td>
+                <td>5742</td>
+                <td>6444</td>
+              </tr>
+              <tr bgcolor="#333399" class="style6" height="25">
+                <td height="25" colspan="6" bgcolor="#FFFFCC">State    Question #2</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Yes</strong></td>
+                <td>2593</td>
+                <td>2797</td>
+                <td>886</td>
+                <td>5390</td>
+                <td>6276</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>No</strong></td>
+                <td>1784</td>
+                <td>1625</td>
+                <td>500</td>
+                <td>3409</td>
+                <td>3909</td>
+              </tr>
+              <tr bgcolor="#333399" class="style6" height="25">
+                <td height="25" colspan="6" bgcolor="#FFFFCC">Town Library    Question</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Regular    Ballot&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    Yes</strong></td>
+                <td>2269</td>
+                <td>2159</td>
+                <td>608</td>
+                <td>4428</td>
+                <td>5036</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>No</strong></td>
+                <td>2308</td>
+                <td>2408</td>
+                <td>771</td>
+                <td>4716</td>
+                <td>5487</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Taxpayers&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Yes</strong></td>
+                <td>20</td>
+                <td>7</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>27</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>No</strong></td>
+                <td>31</td>
+                <td>10</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>41</td>
+              </tr>
+              <tr height="25">
+                <td height="25"><strong>Presidential    Ballots</strong></td>
+                <td>71</td>
+                <td>55</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>126</td>
+              </tr>
+              <tr height="25">
+                <td height="25">&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CEE7FF" height="25">
+                <td height="25"><em><strong>TOTAL    ELECTORS</strong></em></td>
+                <td><strong>7134</strong></td>
+                <td><strong>6432</strong></td>
+                <td>&nbsp;</td>
+                <td><strong>13566</strong></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CEE7FF" height="25">
+                <td height="25"><em><strong>TOTAL    ABSENTEE</strong></em></td>
+                <td><strong>914</strong></td>
+                <td><strong>590</strong></td>
+                <td>&nbsp;</td>
+                <td><strong>1504</strong></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CEE7FF" height="25">
+                <td height="25"><em><strong>TABULATOR    TOTAL</strong></em></td>
+                <td><strong>4661</strong></td>
+                <td><strong>4695</strong></td>
+                <td>&nbsp;</td>
+                <td><strong>9356</strong></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CEE7FF" height="25">
+                <td height="25"><strong><em>TOTAL VOTES</em>    incl Absentee</strong></td>
+                <td><strong>5575</strong></td>
+                <td><strong>5285</strong></td>
+                <td>&nbsp;</td>
+                <td><strong>10860</strong></td>
+                <td>&nbsp;</td>
+              </tr>
+              <tr bgcolor="#CEE7FF" height="25">
+                <td height="25"><em><strong>% of Voters </strong></em></td>
+                <td>80</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+              </tr>
+            </table>
+        </ul>    </td>
+    </tr>
+    <tr>
+      <td valign="top" bgcolor="#F7F9FB"><!--<div align="center"><a href="#regular">Absentee Ballots for Regular Elections</a> / <a href="#referendum">Absentee Ballots for Referendums</a><br>        
+          <a href="#results">Voter Results</a> / <a href="#districts">Voting Locations </a> / <a href="clerkhome.htm">Town Clerk Home</a>
+          </div>
+        <h2>Absentee Ballot Information </h2>
+        <p class="bodyText"><strong>NOTE:</strong> These are  general guidelines for absentee ballot usage. Procedures vary by election and additional procedures may apply. Please visit <a href="http://www.sots.ct.gov/sots/cwp/view.asp?a=3179&q=392220&SOTSNav_GID=1846">Connecticut Secretary of the State's website</a> for complete instructions. </p>
+        <h2 align="center"><span class="style1"><img src="../images/absentee-steps.gif" alt="Absentee ballot steps" width="360" height="400"></span></h2>
+        <h2 align="left"><a name="regular"></a>Absentee Ballot Information <br>
+            <span class="style5">[For Regular Elections          ]</span></h2>
+        <ul>
+          <li>An application <strong>MUST BE COMPLETED BY THE VOTER</strong> prior to issuing the ballot. The applications are available in the Town Clerk's Office OR electronically on the link posted below. </li>
+          <li>The voter may obtain the ballot<strong> IN PERSON</strong> at the Town Clerk's office OR may complete an application, send it to the Clerks Office and a ballot will be mailed to them.</li>
+          <li>No one may carry anyone's ballot except their own during a regular election. The ballot either has to be picked up by the voter or mailed to them.</li>
+        </ul>
+        <h5 align="center">Click below to Download Absentee Ballot Application <br>
+            <span class="style5">For Regular Elections</span></h5>
+        <ul>
+          <LI><A title="English Language Application for Absentee Ballot Form" href="/Clerk/VoterFiles/aabeng.pdf" target="new">English Language Application for Absentee Ballot Form</A>
+          <LI><A title="Spanish Language Application for Absentee Ballot Form" href="/Clerk/VoterFiles/aabspan.pdf" target="new">Spanish Language Application for Absentee Ballot Form</A> <BR>
+              <BR>
+          <LI><A href="/Clerk/VoterFiles/ed3e_Eng.pdf" target="new">English Language Emergency Application for Absentee Ballot</A>
+          <LI><A href="/Clerk/VoterFiles/ed3e_Span.pdf" target="new">Spanish Language Emergency Application for Absentee Ballot</A></LI>
+        </ul>
+        <p align="center">&nbsp;</p>
+        <hr color="#006699">
+        <h2 align="left"><a name="referendum" id="referendum"></a>Absentee Ballot Information <br>
+            <span class="style5">[For Referendums]</span></h2>
+        <p align="left">An application <strong>MUST BE COMPLETED BY THE VOTER</strong> prior to issuing the ballot. The applications are available in the Town Clerk's Office. </p>
+        <p align="left"><strong>ABSENTEE BALLOTS CANNOT BE MAILED. </strong>The voter must obtain the ballot <strong>IN PERSON</strong> at the Town Clerk's office OR may designate a third party to pick up their ballot. That designee may be one of the following people: </p>
+        <ol>
+          <li> A person caring for the voter because of illness.</li>
+          <li> A member of the voters family.</li>
+          <li> A police officer in the municipality in which the voter resides.</li>
+          <li> A registrar, deputy or assistant registrar of voters.</li>
+        </ol>
+        <p>The ballot must be returned to the Town Clerk's office in person no later than 4:00 p.m. the day before the election. Mailed ballots must be received no later than the day of the election. </p>
+        <h5 align="center">Click below to Download Absentee Ballot Application <br>
+            <span class="style5">For Referendums</span></h5>
+        <ul>
+          <LI><A href="/Clerk/VoterFiles/ed3R.pdf" target="new">English Language Application Form for Referendum Only</A>
+          <LI><a href="VoterFiles/ed3R_sp.pdf">Spanish Language Application Form for Referendum Only<BR>
+                <BR>
+            </a>
+          <LI><A href="/Clerk/VoterFiles/ed3e_Eng.pdf" target="new">English Language Emergency Application for Absentee Ballot</A>
+          <LI><A href="/Clerk/VoterFiles/ed3e_Span.pdf" target="new">Spanish Language Emergency Application for Absentee Ballot</A></LI>
+        </ul>
+        <h5 align="center">&nbsp;</h5>
+        <hr color="#006699">
+        <h2 align="left">Additional Information </h2>
+        <blockquote>
+          <p align="left" class="style5">More information about the various absentee ballot processes 
+            and additional <a href="http://www.sots.ct.gov/sots/cwp/view.asp?a=3179&q=392218&SOTSNav_GID=1846">Election forms</a> are available 
+            on the  Connecticut<a href="http://www.sots.ct.gov/sots/cwp/view.asp?a=3179&q=392220&SOTSNav_GID=1846"> Secretary of the State's website</a>.</p>
+        </blockquote>
+      <p align="center"><span class="bodyText"><strong>NOTE:</strong> These are  general guidelines for absentee ballot usage. Procedures vary by election and additional procedures may apply. Please visit <a href="http://www.sots.ct.gov/sots/cwp/view.asp?a=3179&q=392220&SOTSNav_GID=1846">Connecticut Secretary of the State's website</a> for complete instructions. </span></p>--></td>
+    </tr>
+  </table>
+</center>
+<!-- InstanceEndEditable -->
+  <p><br />
+  </p>
+  <div class="footer" >
+    <p align="center">&copy;2011 Town of Madison, 8 Campus Drive, Madison, CT 06443 </p>
+  <!-- end .footer --></div>
+<!-- end .container --></div>
+</body>
+<!-- InstanceEnd --></html>
